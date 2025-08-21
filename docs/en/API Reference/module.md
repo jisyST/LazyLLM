@@ -10,7 +10,14 @@
       - start
       - restart
       - update
-        
+
+::: lazyllm.module.servermodule.LLMBase
+    options:
+      members:
+      - prompt
+      - formatter
+      - share
+
 ::: lazyllm.module.ActionModule
     options:
       members:
@@ -46,14 +53,22 @@
       members:
 
 ::: lazyllm.module.TrialModule
-    members: start
+    members: [start]
     exclude-members:
 
 ::: lazyllm.module.OnlineChatModule
     members:
     exclude-members:
 
+::: lazyllm.module.llms.onlinemodule.supplier.doubao.DoubaoModule
+    members:
+    exclude-members:
+
 ::: lazyllm.module.OnlineEmbeddingModule
+    members:
+    exclude-members:
+
+::: lazyllm.module.llms.onlinemodule.supplier.openai.OpenAIEmbedding
     members:
     exclude-members:
 
@@ -66,3 +81,12 @@
 ::: lazyllm.module.OnlineEmbeddingModuleBase
     members:
     exclude-members: forward
+
+::: lazyllm.module.llms.onlinemodule.supplier.doubao.DoubaoEmbedding
+    options:
+      members:
+
+::: lazyllm.module.llms.onlinemodule.fileHandler.FileHandlerBase
+    members: get_finetune_data
+    exclude-members: 
+    
